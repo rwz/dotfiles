@@ -1,0 +1,9 @@
+source ~/Projects/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
+syntax on
+filetype plugin indent on
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2 
+set expandtab
