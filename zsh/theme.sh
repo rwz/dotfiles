@@ -1,3 +1,6 @@
+autoload -U colors && colors
+setopt promptsubst
+
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe "
   BEGIN {

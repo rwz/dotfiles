@@ -1,4 +1,4 @@
-autoload -U colors && colors
-setopt promptsubst
-source $DOTFILES_ROOT/zsh/git.zsh
-source $DOTFILES_ROOT/zsh/theme.zsh
+source $DOTFILES_ROOT/zsh/rvm.sh
+source $DOTFILES_ROOT/zsh/git.sh
+source $DOTFILES_ROOT/zsh/theme.sh
+source $DOTFILES_ROOT/zsh/heroku.sh

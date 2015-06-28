@@ -1,4 +1,4 @@
-source ~/Projects/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+source $DOTFILES_ROOT/vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
 syntax on
 filetype plugin indent on
