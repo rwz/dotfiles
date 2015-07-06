@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Pavel Pravosud
+  email = pavel@pravosud.com
+[core]
+  editor = vim
+[alias]
+  aa = add .
+  lasttag = describe --abbrev=0 --tags origin
+  ready = "!git log `git lasttag`..master --first-parent"
+  readyfiles = "!git diff --name-status `git lasttag`..master"
