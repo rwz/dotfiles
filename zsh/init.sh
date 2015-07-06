@@ -2,3 +2,25 @@ source $DOTFILES_ROOT/zsh/rvm.sh
 source $DOTFILES_ROOT/zsh/git.sh
 source $DOTFILES_ROOT/zsh/theme.sh
 source $DOTFILES_ROOT/zsh/heroku.sh
+
+setopt appendhistory
+setopt autocd
+setopt extendedglob
+setopt histignoredups
+setopt nonomatch
+setopt prompt_subst
+setopt interactivecomments
+
+# external editor support
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+# completion
+autoload -U compinit; compinit
+
+# set cd autocompletion to commonly visited directories
+cdpath=(~ ~/Projects)
+
+# remove duplicates in $PATH
+typeset -aU path
