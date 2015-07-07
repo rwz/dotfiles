@@ -24,3 +24,7 @@ cdpath=(~ ~/Projects)
 
 # remove duplicates in $PATH
 typeset -aU path
+
+# history
+SAVEHIST=1000
+HISTFILE=$DOTFILES_ROOT/zsh/history
