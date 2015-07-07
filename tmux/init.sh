@@ -1,1 +1,1 @@
-tmux source $DOTFILES_ROOT/tmux/tmux.conf >& /dev/null
+alias tmux="tmux -f $DOTFILES_ROOT/tmux/tmux.conf"
