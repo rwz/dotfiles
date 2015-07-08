@@ -1,4 +1,3 @@
-alias git="HOME=$DOTFILES_ROOT/vim git"
 alias gaa="git add ."
 alias gap="git add -p"
 alias gnap="git add -N . && git add -p"
