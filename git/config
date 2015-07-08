@@ -10,4 +10,4 @@
   ready = "!git log `git lasttag`..master --first-parent"
   readyfiles = "!git diff --name-status `git lasttag`..master"
 [push]
-	default = matching
+	default = current
