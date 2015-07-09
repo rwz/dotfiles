@@ -7,7 +7,13 @@ let g:airline_powerline_fonts = 1
 
 set tabstop=2
 set softtabstop=2
-set shiftwidth=2 
+set shiftwidth=2
 set expandtab
 set noesckeys
 set number
+
+" highlight trailing whitespaces
+match ErrorMsg '\s\+$'
+
+" kill trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
