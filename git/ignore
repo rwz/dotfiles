@@ -2,3 +2,4 @@
 .ruby-*
 .netrwhist
 npm-debug.log
+.pry_history
