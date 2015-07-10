@@ -1,6 +1,6 @@
 export DOTFILES_ROOT=$(cd "$( dirname "$0" )" && pwd)
 
-source $DOTFILES_ROOT/zsh/init.sh
-source $DOTFILES_ROOT/git/init.sh
-source $DOTFILES_ROOT/vim/init.sh
-source $DOTFILES_ROOT/tmux/init.sh
+for dir in zsh git gem vim tmux
+do
+  source $DOTFILES_ROOT/$dir/init.sh
+done
