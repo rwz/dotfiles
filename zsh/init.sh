@@ -11,6 +11,12 @@ setopt nonomatch
 setopt prompt_subst
 setopt interactivecomments
 
+# tree
+t() {
+  level=${1:-2}
+  tree -L $level
+}
+
 # external editor support
 autoload edit-command-line
 zle -N edit-command-line
