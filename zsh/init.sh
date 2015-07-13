@@ -1,7 +1,7 @@
-source $DOTFILES_ROOT/zsh/rvm.sh
-source $DOTFILES_ROOT/zsh/git.sh
-source $DOTFILES_ROOT/zsh/heroku.sh
-source $DOTFILES_ROOT/zsh/theme.sh
+for file in git heroku npm theme rvm
+do
+  source $DOTFILES_ROOT/zsh/$file.sh
+done
 
 setopt appendhistory
 setopt autocd
