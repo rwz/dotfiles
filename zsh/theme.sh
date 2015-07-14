@@ -1,17 +1,8 @@
 autoload -U colors && colors
 setopt promptsubst
 
-_fishy_collapsed_wd() {
-  echo $(pwd | perl -pe "
-  BEGIN {
-  binmode STDIN,  ':encoding(UTF-8)';
-  binmode STDOUT, ':encoding(UTF-8)';
-  }; s|^$HOME|~|g; s|/([^/])[^/]*(?=/)|/\$1|g
-")
-} 
-
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}$(_fishy_collapsed_wd) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}$(_dotfiles_collapsed_wd) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 RPROMPT='$(heroku_cloud_display)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
