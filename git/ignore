@@ -3,3 +3,4 @@
 .netrwhist
 npm-debug.log
 .pry_history
+.nvmrc

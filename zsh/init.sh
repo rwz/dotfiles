@@ -1,6 +1,6 @@
 PATH=$DOTFILES_ROOT/bin:$PATH
 
-for file in git heroku npm theme rvm
+for file in git heroku npm theme rvm nvm
 do
   source $DOTFILES_ROOT/zsh/$file.sh
 done
