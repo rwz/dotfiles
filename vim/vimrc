@@ -20,3 +20,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " NotRocket
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
+
+" User Silver Searcher for ctrlp
+if executable("ag")
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
