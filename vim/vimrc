@@ -17,3 +17,6 @@ match ErrorMsg '\s\+$'
 
 " kill trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
+
+" NotRocket
+command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
