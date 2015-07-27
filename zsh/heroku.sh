@@ -1,6 +1,7 @@
 export PATH="/usr/local/heroku/bin:$PATH"
 
 alias h="heroku"
+alias hs="heroku sudo"
 alias ic="ion-client"
 
 export ION_USER=ppravosud
