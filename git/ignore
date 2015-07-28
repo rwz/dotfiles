@@ -5,3 +5,4 @@ npm-debug.log
 .pry_history
 .nvmrc
 node_modules
+tags
