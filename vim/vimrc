@@ -3,7 +3,6 @@ execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
 syntax on
 filetype plugin indent on
 
-let g:airline_powerline_fonts = 1
 
 set tabstop=2
 set softtabstop=2
@@ -11,6 +10,9 @@ set shiftwidth=2
 set expandtab
 set noesckeys
 set number
+
+" Nice fonts for airline
+let g:airline_powerline_fonts = 1
 
 " highlight trailing whitespaces
 match ErrorMsg '\s\+$'
@@ -22,6 +24,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
 " User Silver Searcher for ctrlp
-if executable("ag")
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
