@@ -84,10 +84,13 @@ if [ ! -f "$HOME/.zshrc" ]; then
   echo "source $dotfiles_root/dotfiles.sh" > "$HOME/.zshrc"
 fi
 
-download_font "https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline%20Bold%20Italic.ttf"
-download_font "https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline%20Bold.ttf"
-download_font "https://github.com/powerline/fonts/blob/master/AnonymousPro/Anonymice%20Powerline%20Italic.ttf"
-download_font "https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Black.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Bold.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20ExtraLight.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Light.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Medium.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Regular.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Semibold.otf"
 
 if ! command -v brew > /dev/null; then
   fancy_echo "Installing Homebrew ..."
