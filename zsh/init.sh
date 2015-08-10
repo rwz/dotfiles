@@ -5,6 +5,9 @@ do
   source $DOTFILES_ROOT/zsh/$file.sh
 done
 
+# syntax highlighting
+source $DOTFILES_ROOT/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 setopt appendhistory
 setopt autocd
 setopt extendedglob
