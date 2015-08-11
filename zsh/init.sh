@@ -5,6 +5,8 @@ do
   source $DOTFILES_ROOT/zsh/$file.sh
 done
 
+export EDITOR=vim
+
 # syntax highlighting
 source $DOTFILES_ROOT/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
