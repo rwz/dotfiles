@@ -18,6 +18,8 @@ setopt nonomatch
 setopt prompt_subst
 setopt interactivecomments
 
+set -o emacs
+
 # tree
 t() {
   level=${1:-2}
