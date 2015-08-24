@@ -10,6 +10,9 @@ export EDITOR=vim
 # syntax highlighting
 source $DOTFILES_ROOT/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# fuzzy search
+source $DOTFILES_ROOT/zsh/plugins/zsh-fuzzy-match/fuzzy-match.zsh
+
 setopt appendhistory
 setopt autocd
 setopt extendedglob

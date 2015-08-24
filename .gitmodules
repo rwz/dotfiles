@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "zsh/plugins/zsh-fuzzy-match"]
+	path = zsh/plugins/zsh-fuzzy-match
+	url = git://github.com/tarruda/zsh-fuzzy-match.git
