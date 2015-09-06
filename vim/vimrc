@@ -11,6 +11,10 @@ set expandtab
 set noesckeys
 set number
 
+" Display invisibles
+set listchars=tab:▸\ ,eol:¬
+set list!
+
 " Nice fonts for airline
 let g:airline_powerline_fonts = 1
 
