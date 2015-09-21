@@ -3,7 +3,7 @@ execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
 syntax on
 filetype plugin indent on
 
-
+" adequate tabs/spaces settings
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -11,11 +11,11 @@ set expandtab
 set noesckeys
 set number
 
-" Display invisibles
+" display invisibles
 set listchars=tab:▸\ ,eol:¬
 set list!
 
-" Nice fonts for airline
+" nice fonts for airline
 let g:airline_powerline_fonts = 1
 
 " highlight trailing whitespace
@@ -24,8 +24,8 @@ match ErrorMsg '\s\+$'
 " kill trailing whitespace automatically
 autocmd BufWritePre * :%s/\s\+$//e
 
-" NotRocket
+" NotRocket command
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
-" User Silver Searcher for ctrlp
+" use Silver Searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
