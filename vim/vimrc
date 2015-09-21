@@ -12,9 +12,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" disable escape sequences
-set noesckeys
-
 " line numbers
 set number
 
