@@ -18,10 +18,10 @@ set list!
 " Nice fonts for airline
 let g:airline_powerline_fonts = 1
 
-" highlight trailing whitespaces
+" highlight trailing whitespace
 match ErrorMsg '\s\+$'
 
-" kill trailing whitespaces automatically
+" kill trailing whitespace automatically
 autocmd BufWritePre * :%s/\s\+$//e
 
 " NotRocket
