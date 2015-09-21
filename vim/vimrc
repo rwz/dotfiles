@@ -1,5 +1,8 @@
+" set up pathogen
 source $DOTFILES_ROOT/vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
+
+" syntax highlighting
 syntax on
 filetype plugin indent on
 
@@ -8,7 +11,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+" disable escape sequences
 set noesckeys
+
+" line numbers
 set number
 
 " display invisibles
