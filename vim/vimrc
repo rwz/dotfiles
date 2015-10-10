@@ -12,6 +12,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" kill the swapfiles and backups
+set nobackup
+set nowritebackup
+set noswapfile
+
 " line numbers
 set number
 
