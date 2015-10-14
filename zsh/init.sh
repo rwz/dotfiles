@@ -6,7 +6,11 @@ do
 done
 
 export EDITOR=vim
-export GOPATH=$HOME/.go
+
+# ugh, go things
+export GOPATH=$HOME/Projects/go
+export GOBIN=$GOPATH/bin
+export PATH="$GOBIN:$PATH"
 
 # syntax highlighting
 source $DOTFILES_ROOT/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
