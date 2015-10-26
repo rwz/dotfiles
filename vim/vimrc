@@ -1,10 +1,15 @@
-" set up pathogen
+" set up runtimepath and pathogen
+set runtimepath+=$DOTFILES_ROOT/vim
+" set runtimepath=/usr/local/share/vim/vim74,$DOTFILES_ROOT/vim
 source $DOTFILES_ROOT/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect($DOTFILES_ROOT."/vim/bundle/{}")
+execute pathogen#infect()
 
 " syntax highlighting
 syntax on
 filetype plugin indent on
+
+" color theme
+colorscheme maui
 
 " adequate tabs/spaces settings
 set tabstop=2
