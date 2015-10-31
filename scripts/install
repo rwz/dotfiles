@@ -84,14 +84,6 @@ if [ ! -f "$HOME/.zshrc" ]; then
   echo "source $dotfiles_root/dotfiles.sh" > "$HOME/.zshrc"
 fi
 
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Black.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Bold.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20ExtraLight.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Light.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Medium.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Regular.otf"
-download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Semibold.otf"
-
 if ! command -v brew > /dev/null; then
   fancy_echo "Installing Homebrew ..."
   curl -fsS "https://raw.githubusercontent.com/Homebrew/install/master/install" | ruby
@@ -115,6 +107,7 @@ brew_install_or_upgrade "ctags"
 brew_install_or_upgrade "tmux"
 brew_install_or_upgrade "reattach-to-user-namespace"
 brew_install_or_upgrade "imagemagick"
+brew_install_or_upgrade "wget"
 
 brew_install_or_upgrade "openssl"
 brew unlink openssl && brew link openssl --force
@@ -126,6 +119,14 @@ if ! command -v heroku > /dev/null; then
 else
   fancy_echo "Heroku Toolbelt already installed. Skipping..."
 fi
+
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Black.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Bold.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20ExtraLight.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Light.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Medium.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Regular.otf"
+download_font "https://github.com/powerline/fonts/raw/master/SourceCodePro/Sauce%20Code%20Powerline%20Semibold.otf"
 
 fancy_echo "Fetching git submodules..."
 cd $dotfiles_root
