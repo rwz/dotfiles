@@ -1,10 +1,18 @@
 set -x __fish_datadir $DOTFILES_ROOT/fish
 
+# git status
+
+source $__fish_datadir/git.fish
+
+function fish_right_prompt
+  __fish_git_prompt
+end
+
 function fish_prompt
   set_color $fish_color_cwd
-  echo -n (prompt_pwd)
+  printf "%s" (prompt_pwd)
   set_color normal
-  echo -n ' > '
+  printf " > "
 end
 
 function fish_greeting
@@ -13,7 +21,8 @@ end
 
 # rvm
 
-source ~/.rvm/scripts/rvm
+# doesn't work
+# source ~/.rvm/scripts/rvm
 
 # heroku
 
