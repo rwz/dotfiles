@@ -3,3 +3,4 @@ set -x ION_USER ppravosud
 alias h "heroku"
 alias hs "heroku _sudo --reason reasons"
 alias ic "ion-client"
+alias cloud "heroku_cloud"

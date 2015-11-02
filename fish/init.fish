@@ -1,4 +1,3 @@
-source $XDG_CONFIG_HOME/fish/git.fish
-source $XDG_CONFIG_HOME/fish/heroku-cloud.fish
-source $XDG_CONFIG_HOME/fish/heroku.fish
-source $XDG_CONFIG_HOME/fish/rvm.fish
+for file in git heroku rvm
+  source $XDG_CONFIG_HOME/fish/$file.fish
+end
