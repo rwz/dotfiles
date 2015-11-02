@@ -1,4 +1,4 @@
-alias tmux "tmux -f $DOTFILES_ROOT/tmux/tmux.conf"
+alias tmux "tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
 function mux
   set -l session (basename (pwd))
