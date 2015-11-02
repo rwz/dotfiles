@@ -48,5 +48,3 @@ function __check_rvm --on-variable PWD -d 'Setup rvm on directory change'
     set -e cwd
   end
 end
-
-rvm current 1>/dev/null 2>&1
