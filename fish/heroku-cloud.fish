@@ -34,7 +34,7 @@ function cloud
   set -e HEROKU_APPDOMAIN
   set -e HEROKU_SSL_VERIFY
 
-  set -x HEROKU_CLOUD $cloud
+  set -gx HEROKU_CLOUD $cloud
 
   switch $cloud
     case default production prod
