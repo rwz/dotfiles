@@ -23,7 +23,7 @@ sudo echo "/path/to/muh-dotfiles/shell" >> /etc/shells
 Change your shell to shell from dotfiles:
 
 ```sh
-chsh -s /path/to/muh-dotfiles
+chsh -s /path/to/muh-dotfiles/shell
 ```
 
 And you're done.
