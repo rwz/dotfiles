@@ -1,4 +1,4 @@
 function fish_greeting
-  fortune -a
+  fortune -as
 end
 
