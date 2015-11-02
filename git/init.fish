@@ -1,2 +1,1 @@
-source $DOTFILES_ROOT/git/aliases.fish
-set -x XDG_CONFIG_HOME $DOTFILES_ROOT
+source $XDG_CONFIG_HOME/git/aliases.fish

@@ -1,7 +1,8 @@
-" set up runtimepath and pathogen
-set runtimepath+=$DOTFILES_ROOT/vim
-" set runtimepath=/usr/local/share/vim/vim74,$DOTFILES_ROOT/vim
-source $DOTFILES_ROOT/vim/bundle/vim-pathogen/autoload/pathogen.vim
+" set up runtimepath
+set runtimepath+=$XDG_CONFIG_HOME/vim
+
+" set up pathogen
+source $XDG_CONFIG_HOME/vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " syntax highlighting

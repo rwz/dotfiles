@@ -1,1 +1,1 @@
-set -x VIMINIT "source $DOTFILES_ROOT/vim/vimrc"
+set -x VIMINIT "source $XDG_CONFIG_HOME/vim/vimrc"
