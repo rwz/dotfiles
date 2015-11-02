@@ -72,20 +72,8 @@ download_font(){
   fi
 }
 
-case "$SHELL" in
-  */zsh) : ;;
-  *)
-    fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)"
-    ;;
-esac
-
-if [ ! -f "$HOME/.zshrc" ]; then
-  echo "source $dotfiles_root/dotfiles.sh" > "$HOME/.zshrc"
-fi
-
 if ! command -v brew > /dev/null; then
-  fancy_echo "Installing Homebrew ..."
+  fancy_echo "Installing Homebrew..."
   curl -fsS "https://raw.githubusercontent.com/Homebrew/install/master/install" | ruby
   export PATH="/usr/local/bin:$PATH"
 else
@@ -95,7 +83,7 @@ fi
 fancy_echo "Updating Homebrew formulas..."
 brew update
 
-brew_install_or_upgrade "zsh"
+brew_install_or_upgrade "fish"
 brew_install_or_upgrade "git"
 brew_install_or_upgrade "postgres"
 brew_launchctl_restart "postgresql"
