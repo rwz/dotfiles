@@ -1,1 +1,1 @@
-set -x GEMRC $DOTFILES_ROOT/gem/gemrc
+set -x GEMRC "$XDG_CONFIG_HOME/gem/gemrc"
