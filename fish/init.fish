@@ -8,7 +8,7 @@ end
 set -xg EDITOR "vim"
 
 # some cd shortcuts
-set CDPATH ~ ~/Projects
+set CDPATH . ~ ~/Projects
 
 # go things
 set -xg GOPATH "$HOME/Projects/go"
