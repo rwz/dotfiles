@@ -1,3 +1,17 @@
+function cloud_prompt
+  set -l prefix "☁ "
+  set -l cloud $HEROKU_CLOUD
+
+  if test "$cloud" != "production" -a -n "$cloud"
+    set_color 0bf
+    printf $prefix
+    set_color normal
+    printf $cloud
+  end
+
+  return 0
+end
+
 function cloud_show
   if test -n "$HEROKU_CLOUD"; echo "HEROKU_CLOUD => $HEROKU_CLOUD"; end
   if test -n "$ION_HOST";  echo "ION_HOST => $ION_HOST"; end
