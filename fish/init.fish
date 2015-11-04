@@ -7,13 +7,13 @@ end
 # default editor
 set -xg EDITOR "vim"
 
-# some cd shortcuts
-set CDPATH . ~ ~/Projects
-
 # go things
 set -xg GOPATH "$HOME/Projects/go"
 set -xg GOBIN "$GOPATH/bin"
 set PATH $GOBIN $PATH
+
+# some cd shortcuts
+set CDPATH . ~ ~/Projects $GOPATH/src
 
 # rvm always wants to be loaded last
 rvm current 1>/dev/null 2>&1
