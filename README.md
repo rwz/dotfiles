@@ -13,17 +13,10 @@ Clone this repo somewhere:
 git clone git@github.com:rwz/dotfiles.git muh-dotfiles
 ```
 
-Add path to `shell` script to your `/etc/shells`. You'll probably need to sudo
-for that.
-
-```sh
-sudo echo "/path/to/muh-dotfiles/shell" >> /etc/shells
-```
-
 Change your shell to shell from dotfiles:
 
 ```sh
-chsh -s /path/to/muh-dotfiles/shell
+sudo chsh -s /path/to/muh-dotfiles/shell yourusername
 ```
 
 And you're done.
