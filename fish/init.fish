@@ -15,5 +15,8 @@ set PATH $GOBIN $PATH
 # some cd shortcuts
 set CDPATH . ~ ~/Projects $GOPATH/src
 
+# exercism
+set -xg EXERCISM_CONFIG_FILE $XDG_CONFIG_HOME/support
+
 # rvm always wants to be loaded last
 rvm current 1>/dev/null 2>&1
