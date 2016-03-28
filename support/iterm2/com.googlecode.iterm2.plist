@@ -95,11 +95,11 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>777 560 924 485 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1107 983 384 129 0 0 2560 1417 </string>
+	<string>1108 983 384 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 1440 0 0 2560 1417 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>190 108 584 451 0 0 1440 877 </string>
+	<string>190 0 730 576 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -828,10 +828,14 @@
 			<string>/Users/rwz</string>
 		</dict>
 	</array>
+	<key>NoSyncDisablePromotions</key>
+	<true/>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>465543280.61495</real>
+	<real>477595153.42322397</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>466963429.78798401</real>
+	<real>477541516.59421498</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -840,6 +844,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -894,7 +900,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-19T16:01:58Z</date>
+	<date>2016-03-17T21:30:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
