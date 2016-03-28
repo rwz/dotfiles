@@ -11,3 +11,6 @@
   readyfiles = "!git diff --name-status `git lasttag`..master"
 [push]
   default = current
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
