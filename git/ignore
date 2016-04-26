@@ -6,6 +6,7 @@
 .pry_history
 .ruby-*
 .viminfo
+.env
 node_modules
 npm-debug.log
 tags
