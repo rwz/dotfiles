@@ -13,7 +13,7 @@
 \set PROMPT1 '%[%033[33;1m%]%x%x%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
 
 -- nice timestamps
-set timezone to 'America/Los_Angeles';
+set timezone to 'US/Pacific';
 
 -- nulls are ghosts
 \pset null (null)
