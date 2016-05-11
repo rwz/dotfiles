@@ -45,8 +45,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 " NotRocket command
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
-" use Silver Searcher for ctrlp
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --ignore "vendor" --ignore "Godeps"'
-
 " go imports
 let g:go_fmt_command = "goimports"
