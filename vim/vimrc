@@ -47,3 +47,6 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
 " go imports
 let g:go_fmt_command = "goimports"
+
+" ctrl-p ignores
+let g:ctrlp_custom_ignore = '\v[\/](\.git|_build|node_modules|deps)$'
