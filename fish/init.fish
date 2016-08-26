@@ -12,6 +12,10 @@ set -xg GOPATH "$HOME/Projects/go"
 set -xg GOBIN "$GOPATH/bin"
 set PATH $GOBIN $PATH
 
+# pager, unstable, causes issues
+# uncomment after an update
+# set -xg PAGER vimpager
+
 # some cd shortcuts
 set CDPATH . ~ ~/Projects $GOPATH/src
 
