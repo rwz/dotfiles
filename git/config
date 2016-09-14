@@ -9,7 +9,8 @@
   lasttag = describe --abbrev=0 --tags origin
   ready = "!git log `git lasttag`..master --first-parent"
   readyfiles = "!git diff --name-status `git lasttag`..master"
-  cleanup = "! git branch --merged master | grep -v master | xargs git branch -d"
+  cleanup = "!git branch --merged master | grep -v master | xargs git branch -d"
+  prs = "log --merges --grep 'Merge pull request' --date=local"
 [push]
   default = current
 [branch "master"]
