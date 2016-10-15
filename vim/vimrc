@@ -53,3 +53,7 @@ let g:ctrlp_custom_ignore = '\v[\/](\.git|_build|node_modules|deps)$'
 
 " sane ctrl-p default dir setting
 let g:ctrlp_working_path_mode = 0
+
+" disable visual mode
+map q: <Nop>
+nnoremap Q <Nop>
