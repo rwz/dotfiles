@@ -11,6 +11,7 @@
   readyfiles = "!git diff --name-status `git lasttag`..master"
   cleanup = "!git branch --merged master | grep -v master | xargs git branch -d"
   prs = "log --merges --grep 'Merge pull request' --date=local"
+  pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 [push]
   default = current
 [branch "master"]
