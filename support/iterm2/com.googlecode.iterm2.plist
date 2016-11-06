@@ -117,15 +117,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>777 864 606 456 0 0 2560 1417 </string>
+	<string>245 444 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1082 983 400 129 0 0 2560 1440 </string>
+	<string>522 578 400 129 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>412 381 620 392 0 0 1440 900 </string>
+	<string>972 768 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>98 84 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>0 0 2560 1440 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>190 0 730 576 0 0 1440 877 </string>
+	<string>4 840 745 577 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -868,12 +870,18 @@
 	<integer>1</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>04F52583-217E-4B95-BDC2-DE37301A091C</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncSuppressAnnyoingBellOffer</key>
 	<true/>
+	<key>NoSyncSuppressWarningAboutInlineImages</key>
+	<true/>
+	<key>NoSyncSuppressWarningAboutInlineImages_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486583052.74603999</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -946,11 +954,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-06T17:30:09Z</date>
+	<date>2016-10-19T18:26:43Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Selection Respects Soft Boundaries</key>
-	<true/>
+	<false/>
 	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -998,6 +1006,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.2</string>
+	<string>3.0.10</string>
 </dict>
 </plist>
