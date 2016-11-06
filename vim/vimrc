@@ -48,8 +48,8 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 " go imports
 let g:go_fmt_command = "goimports"
 
-" ctrl-p ignores
-let g:ctrlp_custom_ignore = '\v[\/](\.git|_build|node_modules|deps)$'
+" ctrl-p only shows files fit knows about. excludes gitignore automatically
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " sane ctrl-p default dir setting
 let g:ctrlp_working_path_mode = 0
