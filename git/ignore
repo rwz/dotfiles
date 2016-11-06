@@ -3,6 +3,7 @@
 .DS_Store
 .bundle
 .env
+.env.*
 .netrwhist
 .nvmrc
 .pry_history
