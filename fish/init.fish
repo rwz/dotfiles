@@ -24,3 +24,6 @@ set -xg EXERCISM_CONFIG_FILE $XDG_CONFIG_HOME/support
 
 # rvm always wants to be loaded last
 rvm current 1>/dev/null 2>&1
+
+# undefine grep function since it fucks up streaming
+functions -e grep
