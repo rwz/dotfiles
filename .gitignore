@@ -1,5 +1,5 @@
 fish/fish_history
 fish/fishd.*
-.exercism.json
+support/exercism.json
 config.json
 heroku/config.json
