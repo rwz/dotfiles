@@ -15,6 +15,7 @@ set PATH $GOBIN $PATH
 # pager, unstable, causes issues
 # uncomment after an update
 # set -xg PAGER vimpager
+set -xg PAGER less
 
 # some cd shortcuts
 set CDPATH . ~ ~/Projects $GOPATH/src
