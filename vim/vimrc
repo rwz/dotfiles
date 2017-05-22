@@ -57,6 +57,9 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
 " sane ctrl-p default dir setting
 let g:ctrlp_working_path_mode = 0
 
+" run rustfmt on save for rust files
+let g:rustfmt_autosave = 1
+
 " disable visual mode
 map q: <Nop>
 nnoremap Q <Nop>
