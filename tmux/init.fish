@@ -1,6 +1,2 @@
 alias tmux "tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
-
-function mux
-  set -l session (basename (pwd))
-  tmux attach -t $session; or tmux new -s $session
-end
+alias mux "tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf new-session -A -s (basename (pwd))"
