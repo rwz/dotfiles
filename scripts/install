@@ -98,9 +98,7 @@ brew_install_or_upgrade "tmux"
 brew_install_or_upgrade "reattach-to-user-namespace"
 brew_install_or_upgrade "imagemagick"
 brew_install_or_upgrade "wget"
-
 brew_install_or_upgrade "openssl"
-brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade "libyaml"
 
 if ! command -v heroku > /dev/null; then
