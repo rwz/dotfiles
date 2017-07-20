@@ -85,6 +85,7 @@ brew update
 
 brew_install_or_upgrade "fish"
 brew_install_or_upgrade "git"
+brew_install_or_upgrade "heroku"
 brew_install_or_upgrade "fortune"
 brew_install_or_upgrade "postgres"
 brew_launchctl_restart "postgresql"
@@ -100,13 +101,6 @@ brew_install_or_upgrade "imagemagick"
 brew_install_or_upgrade "wget"
 brew_install_or_upgrade "openssl"
 brew_install_or_upgrade "libyaml"
-
-if ! command -v heroku > /dev/null; then
-  fancy_echo "Installing Heroku Toolbelt..."
-  wget -O- https://toolbelt.heroku.com/install.sh | sh
-else
-  fancy_echo "Heroku Toolbelt already installed. Skipping..."
-fi
 
 download_font "https://github.com/powerline/fonts/raw/fe396ef6f6b9b315f30af7d7229ff21f67a66e12/SourceCodePro/Source%20Code%20Pro%20Black%20for%20Powerline.otf"
 download_font "https://github.com/powerline/fonts/raw/fe396ef6f6b9b315f30af7d7229ff21f67a66e12/SourceCodePro/Source%20Code%20Pro%20Bold%20for%20Powerline.otf"
