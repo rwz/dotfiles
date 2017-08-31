@@ -69,11 +69,11 @@
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
-	<integer>0</integer>
+	<integer>32</integer>
 	<key>HotkeyCode</key>
-	<integer>0</integer>
+	<integer>49</integer>
 	<key>HotkeyModifiers</key>
-	<integer>0</integer>
+	<integer>524288</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
@@ -124,8 +124,10 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>443 299 659 272 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>742 176 918 495 0 0 2560 1417 </string>
+	<string>736 525 937 465 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
+	<string>0 0 2560 1440 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 2560 1440 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -860,7 +862,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>E222DB18-ADF2-452E-93BF-1956E46DD025</string>
 	<key>NoSyncLastTipTime</key>
-	<real>522604561.85775203</real>
+	<real>524592397.96706498</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -875,6 +877,23 @@
 		<string>0000</string>
 		<string>0001</string>
 		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -946,7 +965,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-24T15:56:01Z</date>
+	<date>2017-08-16T16:04:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
