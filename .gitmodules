@@ -82,3 +82,6 @@
 [submodule "vim/bundle/ctrlp-cmatcher"]
 	path = vim/bundle/ctrlp-cmatcher
 	url = git@github.com:jazzcore/ctrlp-cmatcher
+[submodule "vim/bundle/vim-easy-align"]
+	path = vim/bundle/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git

@@ -63,3 +63,9 @@ let g:rustfmt_autosave = 1
 " disable visual mode
 map q: <Nop>
 nnoremap Q <Nop>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
