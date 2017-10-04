@@ -14,10 +14,17 @@ alias gdh "git diff HEAD"
 alias gl "git pull"
 alias glod "git log --oneline --decorate"
 alias gp "git push"
-alias gpr "git pull --rebase"
 alias gst "git status"
 alias gr "git rebase"
 alias grc "git rebase --continue"
 alias gra "git rebase --abort"
 alias gco "git checkout"
 alias reset-authors "git commit --amend --reset-author -C HEAD"
+
+# git config pull.default = current :(
+
+function gpr --argument-names origin branch
+  test -n "$origin"; or set origin 'origin'
+  test -n "$branch"; or set branch (git rev-parse --abbrev-ref HEAD)
+  git pull --rebase $origin $branch
+end
