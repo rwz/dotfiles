@@ -14,8 +14,6 @@
   pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 [push]
   default = current
-[branch]
-  autoSetupMerge = always
 [branch "master"]
   remote = origin
   merge = refs/heads/master
