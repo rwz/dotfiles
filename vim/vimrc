@@ -49,10 +49,10 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 let g:go_fmt_command = "goimports"
 
 " ctrl-p only shows files fit knows about. excludes gitignore automatically
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = [".git/", "git --git-dir=%s/.git ls-files -oc --exclude-standard"]
 
 " Not terrible fuzzy search for ctrl-p
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch'}
+let g:ctrlp_match_func = {"match" : "matcher#cmatch"}
 
 " sane ctrl-p default dir setting
 let g:ctrlp_working_path_mode = 0
@@ -61,11 +61,14 @@ let g:ctrlp_working_path_mode = 0
 let g:rustfmt_autosave = 1
 
 " disable visual mode
-map q: <Nop>
-nnoremap Q <Nop>
+" map q: <Nop>
+" nnoremap Q <Nop>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Normal ruby code auto-indent
+let g:ruby_indent_assignment_style = "variable"
