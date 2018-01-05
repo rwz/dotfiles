@@ -71,4 +71,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Normal ruby code auto-indent
+" In order for this to work we need to override the default vim indent and use
+" the one in bundle instead.
+" $ mv /usr/local/opt/vim/share/vim/vim80/indent/ruby.vim /usr/local/opt/vim/share/vim/vim80/indent/ruby.vim.old
+" I might consider making an alias for vim to make it happen automatically,
+" since it breaks every time an update arrives.
 let g:ruby_indent_assignment_style = "variable"
