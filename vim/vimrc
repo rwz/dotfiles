@@ -60,9 +60,8 @@ let g:ctrlp_working_path_mode = 0
 " run rustfmt on save for rust files
 let g:rustfmt_autosave = 1
 
-" disable visual mode
-" map q: <Nop>
-" nnoremap Q <Nop>
+" disable ex mode
+nnoremap Q <Nop>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
