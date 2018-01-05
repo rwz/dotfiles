@@ -5,7 +5,12 @@ set runtimepath+=$XDG_CONFIG_HOME/vim
 source $XDG_CONFIG_HOME/vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-" syntax highlighting
+" Load custom ruby indentation before the default one kicks in and ruins the
+" day. Also use proper variable based setting instead of stupid default one.
+source $XDG_CONFIG_HOME/vim/bundle/vim-ruby/indent/ruby.vim
+let g:ruby_indent_assignment_style = "variable"
+
+" Enabling the rest of syntax highligting
 syntax on
 filetype plugin indent on
 
@@ -68,11 +73,3 @@ xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" Normal ruby code auto-indent
-" In order for this to work we need to override the default vim indent and use
-" the one in bundle instead.
-" $ mv /usr/local/opt/vim/share/vim/vim80/indent/ruby.vim /usr/local/opt/vim/share/vim/vim80/indent/ruby.vim.old
-" I might consider making an alias for vim to make it happen automatically,
-" since it breaks every time an update arrives.
-let g:ruby_indent_assignment_style = "variable"
