@@ -12,7 +12,7 @@ set -xg GOPATH "$HOME/Projects/go"
 set -xg GOBIN "$GOPATH/bin"
 set PATH $GOBIN $PATH
 
-# pager, unstable, causes issues
+# vimpager is unstable, causes issues
 # uncomment after an update
 # set -xg PAGER vimpager
 set -xg PAGER less
