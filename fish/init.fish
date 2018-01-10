@@ -1,6 +1,6 @@
 set PATH $XDG_CONFIG_HOME/bin $PATH
 
-for file in git heroku rvm rustup
+for file in aliases git heroku rvm rustup
   source $XDG_CONFIG_HOME/fish/$file.fish
 end
 
