@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-pony"]
+	path = vim/bundle/vim-pony
+	url = git@github.com:jakwings/vim-pony.git
