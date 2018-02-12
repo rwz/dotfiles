@@ -37,9 +37,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = git@github.com:ctrlpvim/ctrlp.vim
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
@@ -76,9 +73,6 @@
 [submodule "vim/bundle/vim-elixir"]
 	path = vim/bundle/vim-elixir
 	url = git@github.com:elixir-lang/vim-elixir.git
-[submodule "vim/bundle/ctrlp-cmatcher"]
-	path = vim/bundle/ctrlp-cmatcher
-	url = git@github.com:jazzcore/ctrlp-cmatcher
 [submodule "vim/bundle/vim-easy-align"]
 	path = vim/bundle/vim-easy-align
 	url = git@github.com:junegunn/vim-easy-align.git
@@ -88,3 +82,9 @@
 [submodule "vim/bundle/vim-pony"]
 	path = vim/bundle/vim-pony
 	url = git@github.com:jakwings/vim-pony.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git

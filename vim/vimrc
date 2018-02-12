@@ -53,14 +53,8 @@ command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 " go imports
 let g:go_fmt_command = "goimports"
 
-" ctrl-p only shows files fit knows about. excludes gitignore automatically
-let g:ctrlp_user_command = [".git/", "git --git-dir=%s/.git ls-files -oc --exclude-standard"]
-
-" Not terrible fuzzy search for ctrl-p
-" let g:ctrlp_match_func = {"match" : "matcher#cmatch"}
-
-" sane ctrl-p default dir setting
-let g:ctrlp_working_path_mode = 0
+" fzf binding
+nmap <C-p> :FZF<CR>
 
 " run rustfmt on save for rust files
 let g:rustfmt_autosave = 1
