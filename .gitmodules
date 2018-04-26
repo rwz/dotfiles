@@ -88,3 +88,9 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/vim-test"]
+	path = vim/bundle/vim-test
+	url = git@github.com:janko-m/vim-test.git
+[submodule "vim/bundle/asyncrun.vim"]
+	path = vim/bundle/asyncrun.vim
+	url = git@github.com:skywind3000/asyncrun.vim.git
