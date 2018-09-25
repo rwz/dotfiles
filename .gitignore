@@ -3,3 +3,4 @@ fish/fishd.*
 support/exercism.json
 config.json
 heroku/config.json
+configstore
