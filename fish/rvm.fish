@@ -1,3 +1,14 @@
+mkdir -p $XDG_CONFIG_HOME/rvm/archives
+mkdir -p $XDG_CONFIG_HOME/rvm/environments
+mkdir -p $XDG_CONFIG_HOME/rvm/gem-cache
+mkdir -p $XDG_CONFIG_HOME/rvm/gems
+mkdir -p $XDG_CONFIG_HOME/rvm/gemsets
+mkdir -p $XDG_CONFIG_HOME/rvm/log
+mkdir -p $XDG_CONFIG_HOME/rvm/rubies
+mkdir -p $XDG_CONFIG_HOME/rvm/tmp
+mkdir -p $XDG_CONFIG_HOME/rvm/user
+mkdir -p $XDG_CONFIG_HOME/rvm/wrappers
+
 function rvm --description='Ruby enVironment Manager'
   # run RVM and capture the resulting environment
   set --local env_file (mktemp -t rvm.fish.XXXXXXXXXX)
