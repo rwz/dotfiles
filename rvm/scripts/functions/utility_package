@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+
+__rvm_fix_group_permissions()
+{
+  if
+    \umask -S | __rvm_grep 'g=rw' >/dev/null
+  then
+    chmod -R g+rwX "$@"
+  fi
+}
+
+# params: archive_file
+__rvm_package_list()
+{
+  rvm_debug __rvm_package_list:$#: "$@"
+  case "$1" in
+    *.zip)
+      unzip -Z -1 "$1"
+      ;;
+    *.tar.bz2)
+      __rvm_tar tjf "$1"
+      ;;
+    *.tar.gz|*.tgz)
+      __rvm_tar tzf "$1"
+      ;;
+    *)
+      return 199
+      ;;
+  esac
+}
+
+__map_tar_excludes()
+{
+  \typeset __exclude_element
+  for __exclude_element
+  do __exclude_elements+=( --exclude "${__exclude_element}" )
+  done
+}
+
+__rvm_package_extract_run()
+{
+  \typeset __extract_run_src __extract_run_target __exclude_elements
+  __extract_run_src="$1"
+  __extract_run_target="$2"
+  shift 2
+  __exclude_elements=()
+
+  if
+    [[ " ${rvm_tar_options:-} " != *" --no-same-owner "*  ]] &&
+    __rvm_tar --help 2>&1 | __rvm_grep -- --no-same-owner >/dev/null
+  then
+    rvm_tar_options="${rvm_tar_options:-}${rvm_tar_options:+ }--no-same-owner"
+  fi
+
+  [[ -d "$__extract_run_target" ]] || mkdir -p "$__extract_run_target"
+  case "$__extract_run_src" in
+    *.zip)
+      #__map_unzip_excludes
+      unzip -q -o "$__extract_run_src" -d "$__extract_run_target"
+      ;;
+    *.tar.bz2)
+      __map_tar_excludes "$@"
+      if [[ -n "$ZSH_VERSION" ]]
+      then __rvm_tar "${__exclude_elements[@]}" -xjf "$__extract_run_src" -C "$__extract_run_target" ${=rvm_tar_options:-}
+      else __rvm_tar "${__exclude_elements[@]}" -xjf "$__extract_run_src" -C "$__extract_run_target" ${rvm_tar_options:-}
+      fi
+      ;;
+    *.tar.gz|*.tgz)
+      __map_tar_excludes "$@"
+      if [[ -n "$ZSH_VERSION" ]]
+      then __rvm_tar "${__exclude_elements[@]}" -xzf "$__extract_run_src" -C "$__extract_run_target" ${=rvm_tar_options:-}
+      else __rvm_tar "${__exclude_elements[@]}" -xzf "$__extract_run_src" -C "$__extract_run_target" ${rvm_tar_options:-}
+      fi
+      ;;
+    *)
+      return 199
+      ;;
+  esac &&
+  __rvm_fix_group_permissions "$__extract_run_target"/* ||
+  return $?
+}
+
+# params: archive_file path [excludes...]
+__rvm_package_extract()
+{
+  rvm_debug __rvm_package_extract:$#: "$@"
+  \typeset __extract_src __extract_target __tempdir __path __file __return
+  __extract_src="$1"
+  __extract_target="$2"
+  shift 2
+  __return=0
+  __tempdir="$( TMPDIR="${rvm_tmp_path}" mktemp -d -t rvm-tmp.XXXXXXXXX )"
+  __rvm_package_extract_run "$__extract_src" "$__tempdir" "$@" || __return=$?
+  if
+    (( __return == 0 ))
+  then
+    for __path in "$__tempdir"/*
+    do
+      __file="${__path##*/}"
+      if
+        [[ -n "${__file}" && -e "$__extract_target/${__file}" ]]
+      then
+        \command \rm -rf "$__extract_target/${__file}" || __return=$?
+      fi
+      \command \mv -f "${__path}" "$__extract_target/" || __return=$?
+    done
+  fi
+  if [[ -n "$__tempdir" ]]
+  then \command \rm -rf "$__tempdir"
+  fi
+  return $__return
+}
+
+# params: archive_file [path [path2]]
+__rvm_package_create()
+{
+  rvm_debug __rvm_package_create:$#: "$@"
+  case "$1" in
+    *.tar.bz2)
+      if [[ -z "${3:-}" ]]
+      then __rvm_tar cjf "$1" "$2"
+      else __rvm_tar cjf "$1" -C "$2" "$3"
+      fi
+      ;;
+    *.tar.gz|*.tgz)
+      if [[ -z "${3:-}" ]]
+      then __rvm_tar czf "$1" "$2"
+      else __rvm_tar czf "$1" -C "$2" "$3"
+      fi
+      ;;
+    *)
+      return 199
+      ;;
+  esac
+}

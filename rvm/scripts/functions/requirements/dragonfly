@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# new handlers for pkgng
+requirements_dragonfly_lib_installed()
+{
+  pkg info | __rvm_grep "^$1" >/dev/null 2>&1 || return $?
+}
+
+requirements_dragonfly_libs_install()
+{
+  __rvm_try_sudo pkg install -y "$@" || return $?
+}
+
+requirements_dragonfly_update_system()
+{
+    __rvm_try_sudo pkg update || return $?
+}
+
+requirements_dragonfly_define()
+{
+  case "$1" in
+    (rvm)
+      requirements_check bash curl
+      ;;
+
+    (jruby*)
+      requirements_check make jdk
+
+      if
+        is_head_or_disable_binary "$1"
+      then
+        requirements_check git
+        case $( jruby_installation_method  "$1" ) in
+          ant) __rvm_which ant >/dev/null || requirements_check apache-ant ;;
+          mvn) requirements_check_custom_after mvn=maven                   ;;
+        esac
+      fi
+      ;;
+
+    (truffleruby*)
+      requirements_check openssl llvm40
+      ;;
+
+    (ir*)
+      requirements_check mono
+      ;;
+
+    (opal)
+      requirements_check node
+      ;;
+
+    (*-head)
+      requirements_check git
+      requirements_freebsd_define "${1%-head}"
+      ;;
+
+    (*)
+      # OpenSSL is installed by default
+      requirements_check autoconf automake libtool bison readline libyaml sqlite3 gdbm
+      __rvm_update_configure_opt_dir "$1" "/usr/local"
+      ;;
+  esac
+}

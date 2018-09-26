@@ -4,3 +4,15 @@ support/exercism.json
 config.json
 heroku/config.json
 configstore
+
+# RVM stuff
+rvm/archives
+rvm/environments
+rvm/gem-cache
+rvm/gems
+rvm/gemsets
+rvm/log
+rvm/rubies
+rvm/tmp
+rvm/user
+rvm/wrappers

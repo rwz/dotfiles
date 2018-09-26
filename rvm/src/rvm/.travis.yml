@@ -1,0 +1,54 @@
+language: c
+os: [osx, linux]
+sudo: false
+addons:
+  apt:
+    packages:
+      - gawk
+      - libgmp-dev
+before_install:
+  - rm ~/.rvm/hooks/after_use
+  - "sed -i'' -e '/rvm_project_rvmrc/d ; /rvm_silence_path_mismatch_check_flag/d' ~/.rvmrc || true"
+  - "echo rvm_show_log_lines_on_error=all >> ~/.rvmrc"
+  - "head -n 100 /etc/rvmrc ~/.rvmrc || true"
+  - rvm list
+  - "rvm use ruby-2.4 --fuzzy || rvm use ruby-2.3 --fuzzy"
+  - "[[ -n \"${LANG:-}\" ]] || export LANG=en_US.UTF-8"
+  - "env | grep '^rvm' || true"
+install:
+  - gem install tf -v '>=0.4.1'
+before_script:
+  - "echo ruby_1.8.7_rubygems_version=1.8.25 > $rvm_path/user/db"
+  - "if [[ -f ~/.rvmrc ]] ; then sed -i'' -r -e '/rvm_silence_path_mismatch_check_flag|rvm_project_rvmrc/ d' ~/.rvmrc ; fi"
+  - unset rvm_silence_path_mismatch_check_flag rvm_project_rvmrc
+  - rvm alias delete default
+  - hash -r
+  - ./install
+  - git submodule init
+  - git submodule update
+script:
+  - tf --text $TEST
+env:
+  - TEST=rvm-test/fast/* rvm-test-rvm1/*
+  - TEST=rvm-test/long/named_ruby_and_gemsets_comment_test.sh
+matrix:
+  include:
+    - os: linux
+      env: TEST="rvm-installer GPG signature"
+      addons:
+        apt:
+          packages:
+            - gnupg2
+      script:
+        - gpg2 --verify binscripts/rvm-installer.asc binscripts/rvm-installer
+notifications:
+  email:
+    recipients:
+      - mpapis@gmail.com
+    on_failure: change
+  slack:
+    rooms:
+      secure: KUEuifsnQ76ZZRj/5V2uFEtv0u3irvAdOSEHps/0MSLo2mkJAeja8L4salKKEIsvh3Ftl4t6Bs2z6sut2L5Bu0JlU1UBXtNe0QuYpBs5UL7kv7lxIbnGlQDvAmDjmItVMDg0cSSNfegl6t0xQknO4V7PUu7xNkfQkh+FklvFBBI=
+    on_success: change
+    on_failure: always
+    on_pull_requests: true
