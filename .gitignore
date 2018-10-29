@@ -16,3 +16,4 @@ rvm/rubies
 rvm/tmp
 rvm/user
 rvm/wrappers
+rvm/src
