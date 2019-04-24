@@ -1,3 +1,4 @@
 #!/bin/sh
-fish_path=/usr/local/bin/fish
-REAL_SHELL=$0 SHELL=$fish_path XDG_CONFIG_HOME="$( cd "$( dirname "$0" )" && pwd )" exec $fish_path "$@"
+zsh_path=/usr/local/bin/zsh
+xdg="$( cd "$( dirname "$0" )" && pwd )"
+REAL_SHELL=$0 SHELL=$zsh_path DOTFILES_PATH=$xdg XDG_CONFIG_HOME=$xdg ZDOTDIR="$xdg/zsh" exec $zsh_path "$@"

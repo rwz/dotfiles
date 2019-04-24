@@ -1,9 +1,9 @@
-# This is Git's per-user configuration file.
+
 [user]
   name = Pavel Pravosud
   email = pavel@pravosud.com
 [core]
-  editor = vim
+  editor = nvim
 [alias]
   aa = add .
   lasttag = describe --abbrev=0 --tags origin

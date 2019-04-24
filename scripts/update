@@ -1,7 +1,0 @@
-#!/bin/sh
-
-source "$(dirname $0)/install"
-
-fancy_echo "Updating submodules..."
-cd $dotfiles_root
-git submodule foreach git pull origin master

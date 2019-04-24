@@ -1,0 +1,1 @@
+export VIMINIT="source $DOTFILES_PATH/vim/vimrc"

@@ -9,6 +9,7 @@
 .pry_history
 .ruby-*
 .viminfo
+.tmp
 node_modules
 npm-debug.log
 tags

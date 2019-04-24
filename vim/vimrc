@@ -1,13 +1,12 @@
 " set up runtimepath
-set runtimepath+=$XDG_CONFIG_HOME/vim
+set runtimepath+=$DOTFILES_PATH/vim
 
 " set up pathogen
-source $XDG_CONFIG_HOME/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+source $DOTFILES_PATH/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect($DOTFILES_PATH.'/vim/bundle/{}')
 
 " Load custom ruby indentation before the default one kicks in and ruins the
 " day. Also use proper variable based setting instead of stupid default one.
-source $XDG_CONFIG_HOME/vim/bundle/vim-ruby/indent/ruby.vim
 let g:ruby_indent_assignment_style = "variable"
 
 " Enabling the rest of syntax highligting

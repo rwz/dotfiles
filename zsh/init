@@ -1,0 +1,30 @@
+export EDITOR=nvim
+export GOPATH=$HOME/Projects/go
+GO111MODULE=on
+
+path=(/usr/local/bin $GOPATH/bin $path)
+cdpath=($cdpath ~/Projects)
+
+fpath=($DOTFILES_PATH/zsh/functions $fpath)
+
+HISTFILE=$DOTFILES_PATH/.history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+setopt autocd nomatch prompt_subst
+unsetopt beep extendedglob notify
+bindkey -e
+
+autoload -Uz compinit
+compinit
+
+autoload gpr
+
+source $DOTFILES_PATH/zsh/prompt
+source $DOTFILES_PATH/zsh/aliases
+source $DOTFILES_PATH/vim/init
+source $DOTFILES_PATH/tmux/init
+
+# MOTD
+fortune -as

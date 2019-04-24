@@ -1,96 +1,57 @@
 [submodule "vim/bundle/vim-pathogen"]
 	path = vim/bundle/vim-pathogen
 	url = git@github.com:tpope/vim-pathogen.git
-[submodule "vim/bundle/vim-sensible"]
-	path = vim/bundle/vim-sensible
-	url = git@github.com:tpope/vim-sensible.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = git@github.com:tpope/vim-surround.git
-[submodule "vim/bundle/vim-endwise"]
-	path = vim/bundle/vim-endwise
-	url = git@github.com:tpope/vim-endwise.git
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule "vim/bundle/splitjoin.vim"]
+	path = vim/bundle/splitjoin.vim
+	url = git@github.com:AndrewRadev/splitjoin.vim.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git@github.com:ervandew/supertab.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "vim/bundle/vim-easy-align"]
+	path = vim/bundle/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/bundle/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
 [submodule "vim/bundle/vim-projectionist"]
 	path = vim/bundle/vim-projectionist
 	url = git@github.com:tpope/vim-projectionist.git
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
+[submodule "vim/bundle/vim-sensible"]
+	path = vim/bundle/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git@github.com:tpope/vim-surround.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
-[submodule "vim/bundle/splitjoin.vim"]
-	path = vim/bundle/splitjoin.vim
-	url = git@github.com:AndrewRadev/splitjoin.vim.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
-[submodule "vim/bundle/rust.vim"]
-	path = vim/bundle/rust.vim
-	url = git@github.com:rust-lang/rust.vim.git
-[submodule "vim/bundle/vim-json"]
-	path = vim/bundle/vim-json
-	url = git@github.com:elzr/vim-json.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = git@github.com:pangloss/vim-javascript.git
-[submodule "vim/bundle/ag.vim"]
-	path = vim/bundle/ag.vim
-	url = git@github.com:rking/ag.vim.git
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/bundle/vim-rake"]
-	path = vim/bundle/vim-rake
-	url = git@github.com:tpope/vim-rake.git
-[submodule "vim/bundle/vim-rails"]
-	path = vim/bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "vim/bundle/vim-bundler"]
-	path = vim/bundle/vim-bundler
-	url = git://github.com/tpope/vim-bundler.git
-[submodule "zsh/plugins/zsh-fuzzy-match"]
-	path = zsh/plugins/zsh-fuzzy-match
-	url = git://github.com/tarruda/zsh-fuzzy-match.git
-[submodule "vim/bundle/vim-go"]
-	path = vim/bundle/vim-go
-	url = git@github.com:fatih/vim-go.git
-[submodule "vim/bundle/vim-fish"]
-	path = vim/bundle/vim-fish
-	url = git@github.com:dag/vim-fish.git
-[submodule "vim/bundle/vim-elixir"]
-	path = vim/bundle/vim-elixir
-	url = git@github.com:elixir-lang/vim-elixir.git
-[submodule "vim/bundle/vim-easy-align"]
-	path = vim/bundle/vim-easy-align
-	url = git@github.com:junegunn/vim-easy-align.git
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/bundle/vim-ruby
-	url = git@github.com:vim-ruby/vim-ruby.git
-[submodule "vim/bundle/vim-pony"]
-	path = vim/bundle/vim-pony
-	url = git@github.com:jakwings/vim-pony.git
-[submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = git@github.com:junegunn/fzf.git
-[submodule "vim/bundle/fzf.vim"]
-	path = vim/bundle/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
-[submodule "vim/bundle/vim-test"]
-	path = vim/bundle/vim-test
-	url = git@github.com:janko-m/vim-test.git
-[submodule "vim/bundle/asyncrun.vim"]
-	path = vim/bundle/asyncrun.vim
-	url = git@github.com:skywind3000/asyncrun.vim.git

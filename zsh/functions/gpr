@@ -1,0 +1,15 @@
+gpr() {
+	if [[ -n $1 ]] ; then
+		origin=$1
+	else
+		origin='origin'
+	fi
+
+	if [[ -n $2 ]] ; then
+		branch=$2
+	else
+		branch=$(git rev-parse --abbrev-ref HEAD)
+	fi
+
+	git pull --rebase $origin $branch
+}

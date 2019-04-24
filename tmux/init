@@ -1,0 +1,3 @@
+alias tmux="tmux -f $DOTFILES_PATH/tmux/tmux.conf"
+alias mux="tmux -f $DOTFILES_PATH/tmux/tmux.conf new-session -A -s default"
+alias tmate="tmate $DOTFILES_PATH/tmux/tmux.conf"
