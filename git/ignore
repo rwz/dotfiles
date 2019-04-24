@@ -10,6 +10,7 @@
 .ruby-*
 .viminfo
 .tmp
+.history
 node_modules
 npm-debug.log
 tags
