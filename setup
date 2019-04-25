@@ -61,8 +61,7 @@ download_font(){
 
   if [ ! -f "$HOME/Library/Fonts/${font_name}" ]; then
     fancy_echo "Downloading $font_name font..."
-    # wget "$font_url" -q -O "$HOME/Library/Fonts/$font_name"
-    curl "$font_url" -s -o "$HOME/Library/Fonts/$font_name"
+    curl -L -s "$font_url" -o "$HOME/Library/Fonts/$font_name"
   else
     fancy_echo "Font $font_name is already installed. Skipping..."
   fi
