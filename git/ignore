@@ -16,3 +16,6 @@ npm-debug.log
 tags
 .byebug_history
 pkg/*.gem
+Dockerfile.dev
+docker-compose.dev.yml
+docker-compose.dev.yaml
