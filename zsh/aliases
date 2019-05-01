@@ -25,4 +25,4 @@ alias gra="git rebase --abort"
 alias gco="git checkout"
 alias reset-authors="git commit --amend --reset-author -C HEAD"
 
-alias d='docker-compose exec dev'
+alias d='docker-compose --file docker-compose.dev.yml exec dev'
