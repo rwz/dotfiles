@@ -19,6 +19,9 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
+# make autocomplete case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 autoload gpr
 
 source $DOTFILES_PATH/zsh/prompt
