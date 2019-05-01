@@ -66,9 +66,3 @@ xmap ga <Plug>(EasyAlign)
 "
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" vim-test
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-let test#strategy = "asyncrun"
-let g:asyncrun_open = 15
