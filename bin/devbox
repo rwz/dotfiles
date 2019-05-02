@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+DOCKERFILE_NAME = ".Dockerfile.devbox"
+DOCKER_COMPOSE_NAME = ".docker-compose.devbox.yml"
+
+def run_devbox(command, *args)
+  unless File.exists?(DOCKERFILE_NAME)
+    abort <<~ERRMSG
+      Looks like devbox is not initialized for this project.
+      Consider running `devbox init <lang>`...
+    ERRMSG
+  end
+
+  unwrapped_args = case command
+  when "up"
+    [ "-d", *args ]
+  when "exec"
+    [ "devbox", *args ]
+  else
+    args
+  end
+
+  exec \
+    ENV,
+    "docker-compose",
+    "-f", DOCKER_COMPOSE_NAME,
+    command, *unwrapped_args
+end
+
+def init_devbox(lang)
+  path = File.expand_path("../../support", __FILE__)
+  dockerfile_path = File.join(path, "Dockerfile.#{lang}.devbox")
+  compose_path = File.join(path, "docker-compose.devbox.yml")
+
+  unless File.exists?(dockerfile_path)
+    abort "#{lang} is not a supported language"
+  end
+
+  FileUtils.cp dockerfile_path, DOCKERFILE_NAME
+  FileUtils.cp compose_path, DOCKER_COMPOSE_NAME
+
+  puts "Initialized #{lang} devbox"
+end
+
+command = ARGV.shift
+case command
+when "up", "down", "exec"
+  run_devbox command, *ARGV
+when "init"
+  lang = ARGV.shift
+  init_devbox lang
+else
+  abort "invalid command: #{command}"
+end

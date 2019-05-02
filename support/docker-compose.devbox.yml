@@ -1,0 +1,9 @@
+version: "3"
+services:
+  devbox:
+    build:
+      context: .
+      dockerfile: ".Dockerfile.devbox"
+    command: "sh -c 'while true; do sleep 1; done'"
+    volumes:
+      - ".:/var/devbox"
