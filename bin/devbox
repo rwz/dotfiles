@@ -5,7 +5,7 @@ require "fileutils"
 DOCKERFILE_NAME = ".Dockerfile.devbox"
 DOCKER_COMPOSE_NAME = ".docker-compose.devbox.yml"
 
-def run_devbox(command, *args)
+def run_devbox(*args)
   unless File.exists?(DOCKERFILE_NAME)
     abort <<~ERRMSG
       Looks like devbox is not initialized for this project.
@@ -13,23 +13,27 @@ def run_devbox(command, *args)
     ERRMSG
   end
 
-  unwrapped_args = case command
+  unwrapped_args = case args.first
   when "up"
-    [ "-d", *args ]
-  when "exec"
-    [ "devbox", *args ]
-  else
+    [ "up", "-d", *args.drop(1) ]
+  when "down"
     args
+  when "exec"
+    [ "exec", "devbox", *args.drop(1) ]
+  else
+    [ "exec", "devbox", *args ]
   end
 
   exec \
     ENV,
     "docker-compose",
     "-f", DOCKER_COMPOSE_NAME,
-    command, *unwrapped_args
+    *unwrapped_args
 end
 
 def init_devbox(lang)
+  abort "Need to pass language to init a devbox" unless lang
+
   path = File.expand_path("../../support", __FILE__)
   dockerfile_path = File.join(path, "Dockerfile.#{lang}.devbox")
   compose_path = File.join(path, "docker-compose.devbox.yml")
@@ -44,13 +48,8 @@ def init_devbox(lang)
   puts "Initialized #{lang} devbox"
 end
 
-command = ARGV.shift
-case command
-when "up", "down", "exec"
-  run_devbox command, *ARGV
-when "init"
-  lang = ARGV.shift
-  init_devbox lang
+if ARGV.first == "init"
+  init_devbox ARGV[1]
 else
-  abort "invalid command: #{command}"
+  run_devbox *ARGV
 end

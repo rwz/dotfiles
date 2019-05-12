@@ -7,3 +7,5 @@ services:
     command: "sh -c 'while true; do sleep 1; done'"
     volumes:
       - ".:/var/devbox"
+      - "~/.ssh:/root/.ssh"
+      - "~/.gem/credentials:/root/.gem/credentials"
