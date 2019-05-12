@@ -6,17 +6,15 @@ DOCKERFILE_NAME = ".Dockerfile.devbox"
 DOCKER_COMPOSE_NAME = ".docker-compose.devbox.yml"
 
 def run_devbox(*args)
-  unless File.exists?(DOCKERFILE_NAME)
-    abort <<~ERRMSG
-      Looks like devbox is not initialized for this project.
-      Consider running `devbox init <lang>`...
-    ERRMSG
-  end
+  abort <<~ERRMSG unless File.exists?(DOCKERFILE_NAME)
+    Looks like devbox is not initialized for this project.
+    Consider running `devbox init <lang>`...
+  ERRMSG
 
   unwrapped_args = case args.first
   when "up"
     [ "up", "-d", *args.drop(1) ]
-  when "down"
+  when "down", "ps", "build", "stop"
     args
   when "exec"
     [ "exec", "devbox", *args.drop(1) ]
