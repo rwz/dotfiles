@@ -58,6 +58,3 @@
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
 	url = git@github.com:flowtype/vim-flow.git
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = git@github.com:w0rp/ale.git
