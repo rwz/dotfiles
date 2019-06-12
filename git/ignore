@@ -19,3 +19,4 @@ pkg/*.gem
 .Dockerfile.devbox
 .docker-compose.devbox.yml
 .docker-compose.devbox.yaml
+zsh/.zcompdump
