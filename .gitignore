@@ -1,5 +1,5 @@
 zsh/.zcompdump
-support/exercism.json
+exercism
 config.json
 heroku/config.json
 configstore
