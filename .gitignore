@@ -1,5 +1,4 @@
-fish/fish_history
-fish/fishd.*
+zsh/.zcompdump
 support/exercism.json
 config.json
 heroku/config.json
