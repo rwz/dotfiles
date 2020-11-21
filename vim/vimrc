@@ -1,9 +1,39 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " set up runtimepath
 set runtimepath+=$DOTFILES_PATH/vim
 
-" set up pathogen
-source $DOTFILES_PATH/vim/bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect($DOTFILES_PATH.'/vim/bundle/{}')
+" set up vim-plug
+source $DOTFILES_PATH/vim/plug.vim
+
+" set up plug
+call plug#begin('$DOTFILES_PATH/vim/plugins')
+
+Plug 'ajh17/VimCompletesMe'
+Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby'
+
+call plug#end()
+
+
+
 
 " Load custom ruby indentation before the default one kicks in and ruins the
 " day. Also use proper variable based setting instead of stupid default one.

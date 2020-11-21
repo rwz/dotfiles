@@ -5,6 +5,8 @@ config.json
 heroku/config.json
 configstore
 
+vim/plugins
+
 # RVM stuff
 rvm/archives
 rvm/environments

@@ -1,1 +1,5 @@
 export VIMINIT="source $DOTFILES_PATH/vim/vimrc"
+
+# The plugins directory is in gitignore so it might not be present on first
+# launch. Making sure it exists
+mkdir -p $DOTFILES_PATH/vim/plugins
