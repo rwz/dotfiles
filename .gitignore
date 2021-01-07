@@ -3,6 +3,7 @@ exercism
 config.json
 heroku/config.json
 configstore
+<<<<<<< HEAD
 
 vim/plugins
 
@@ -18,3 +19,6 @@ rvm/tmp
 rvm/user
 rvm/wrappers
 rvm/src
+=======
+dlv
+>>>>>>> a2a9925 (gitignore dlv)
