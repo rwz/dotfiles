@@ -1,5 +1,5 @@
 [user]
-  name = Pavel Pravosud
+	name = Pavel Pravosud
   email = pavel@pravosud.com
 [core]
   editor = nvim
