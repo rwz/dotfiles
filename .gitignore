@@ -1,24 +1,11 @@
-zsh/.zcompdump
-exercism
 config.json
-heroku/config.json
+config.json
 configstore
-<<<<<<< HEAD
-
-vim/plugins
-
-# RVM stuff
-rvm/archives
-rvm/environments
-rvm/gem-cache
-rvm/gems
-rvm/gemsets
-rvm/log
-rvm/rubies
-rvm/tmp
-rvm/user
-rvm/wrappers
-rvm/src
-=======
+configstore
 dlv
->>>>>>> a2a9925 (gitignore dlv)
+exercism
+heroku/config.json
+heroku/config.json
+support/exercism.json
+vim/plugins
+zsh/.zcompdump
