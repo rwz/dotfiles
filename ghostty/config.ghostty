@@ -1,0 +1,2 @@
+fullscreen = non-native-visible-menu
+keybind = f19=csi:18;2~

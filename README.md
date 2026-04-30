@@ -21,6 +21,17 @@ sudo chsh -s /path/to/muh-dotfiles/shell $USER
 
 And you're done.
 
+## Ghostty
+
+Ghostty on macOS reads its config from `~/Library/Application Support/com.mitchellh.ghostty/`. Symlink it to the version in this repo:
+
+```sh
+mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+ln -sf "$PWD/ghostty/config.ghostty" ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+```
+
+(Run from the root of this repo.)
+
 ## Uninstall
 
 Change your shell to whatever it was before:
