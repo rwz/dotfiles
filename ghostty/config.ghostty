@@ -1,8 +1,9 @@
 # non-native fullscreen without exclusivity and animations
 fullscreen = non-native-visible-menu
-
-# send Shift+F7 when F19 is pressed
-keybind = f19=csi:18;2~
+macos-non-native-fullscreen = visible-menu
 
 # skip confirmation on quit
 confirm-close-surface = false
+
+# send Shift+F7 when F19 is pressed
+keybind = f19=csi:18;2~
