@@ -5,5 +5,9 @@ if [ ! -f "$zsh_path" ]; then
   zsh_path=/usr/local/bin/zsh
 fi
 
+if [ ! -f "$zsh_path" ]; then
+  zsh_path=/bin/zsh
+fi
+
 xdg="$( cd "$( dirname "$0" )" && pwd )"
 REAL_SHELL=$0 SHELL=$zsh_path DOTFILES_PATH=$xdg XDG_CONFIG_HOME=$xdg ZDOTDIR="$xdg/zsh" exec $zsh_path "$@"
