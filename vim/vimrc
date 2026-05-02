@@ -10,12 +10,11 @@ source $DOTFILES_PATH/vim/plug.vim
 " set up plug
 call plug#begin('$DOTFILES_PATH/vim/plugins')
 
-Plug 'ajh17/VimCompletesMe'
+Plug 'ward/VimCompletesMe'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
