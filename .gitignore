@@ -6,3 +6,4 @@ heroku/config.json
 support/exercism.json
 vim/plugins
 zsh/.zcompdump
+.claude
