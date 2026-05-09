@@ -30,6 +30,8 @@ source $DOTFILES_PATH/zsh/aliases
 source $DOTFILES_PATH/vim/init
 source $DOTFILES_PATH/tmux/init
 
+if (( $+commands[mise] )); then eval "$(mise activate zsh)"; fi
+
 if [ -f ~/.init-dotfiles ]; then source ~/.init-dotfiles; fi
 
 # MOTD
