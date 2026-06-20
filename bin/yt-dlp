@@ -20,9 +20,11 @@ img="${YTDLP_DOCKER_IMAGE:-ghcr.io/rwz/yt-dlp-docker:nightly}"
 
 # Best-effort, non-fatal auto-update on every call (stateless); then reclaim our
 # previous dangling nightly (label-scoped, dangling-only — never -a). Skipped in dry-run.
+# Progress is shown live (not silenced) so a slow pull never looks like a hang; it is
+# sent to stderr so it can't corrupt a stdout stream (e.g. `yt-dlp -o - … | player`).
 if [ -z "${YTDLP_DOCKER_DRY_RUN:-}" ]; then
-  docker pull -q "$img" >/dev/null 2>&1 || true
-  docker image prune -f --filter "label=dev.rwz.yt-dlp-docker=true" >/dev/null 2>&1 || true
+  docker pull "$img" >&2 || true
+  docker image prune -f --filter "label=dev.rwz.yt-dlp-docker=true" >&2 || true
 fi
 
 # Allocate a TTY only when BOTH stdin and stdout are terminals.
