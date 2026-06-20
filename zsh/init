@@ -13,7 +13,7 @@ SAVEHIST=10000
 setopt sharehistory
 setopt incappendhistory
 
-setopt autocd nomatch prompt_subst
+setopt autocd autopushd pushdignoredups nomatch prompt_subst
 unsetopt beep extendedglob notify
 bindkey -e
 
