@@ -1,0 +1,8 @@
+# Load Homebrew into the shell environment when it's installed.
+# Covers both Apple Silicon (/opt/homebrew) and Intel (/usr/local).
+for brew in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+  if [[ -x $brew ]]; then
+    eval "$($brew shellenv)"
+    break
+  fi
+done
