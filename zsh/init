@@ -2,7 +2,13 @@ export EDITOR=nvim
 export GOPATH=$HOME/Projects/go
 GO111MODULE=on
 
-path=(/opt/homebrew/bin /usr/local/bin /usr/local/sbin ~/.local/bin $DOTFILES_PATH/bin $GOPATH/bin $path)
+path=(
+  ~/.local/bin(N-/)
+  ~/.orbstack/bin(N-/)
+  $DOTFILES_PATH/bin(N-/)
+  $GOPATH/bin(N-/)
+  $path
+)
 cdpath=($cdpath ~/Projects ~/code)
 
 fpath=($DOTFILES_PATH/zsh/functions $fpath)
