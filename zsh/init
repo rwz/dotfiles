@@ -1,12 +1,9 @@
 export EDITOR=nvim
-export GOPATH=$HOME/Projects/go
-GO111MODULE=on
 
 path=(
   ~/.local/bin(N-/)
   ~/.orbstack/bin(N-/)
   $DOTFILES_PATH/bin(N-/)
-  $GOPATH/bin(N-/)
   $path
 )
 cdpath=($cdpath ~/Projects ~/code)
