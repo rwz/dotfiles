@@ -39,4 +39,6 @@ if (( $+commands[mise] )); then eval "$(mise activate zsh)"; fi
 if [ -f ~/.init-dotfiles ]; then source ~/.init-dotfiles; fi
 
 # MOTD
-fortune -as
+# brew tap daviderestivo/fortune-mod
+# brew install fortune-mod --with-offensive
+(( $+commands[fortune] )) && fortune -as
