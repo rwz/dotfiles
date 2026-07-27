@@ -20,3 +20,5 @@ pkg/*.gem
 .docker-compose.devbox.yml
 .docker-compose.devbox.yaml
 zsh/.zcompdump
+
+**/.claude/settings.local.json
