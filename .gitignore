@@ -1,4 +1,6 @@
 /colima
+/herdr/*
+!/herdr/config.toml
 /homebrew
 config.json
 configstore
