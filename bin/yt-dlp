@@ -17,10 +17,14 @@
 #   YTDLP_DOCKER_NO_PULL if set, skip the per-run image pull + prune (cached/offline)
 #   YTDLP_DOCKER_DRY_RUN if set, print the docker argv instead of running (test seam)
 #   YTDLP_DOCKER_OS      override the detected OS (test seam; defaults to `uname -s`)
-set -u
 
-# HOME drives the mounts and config path; fail clearly rather than with a bare
-# "unbound variable" if it is somehow unset (e.g. `env -i`).
+# No `set -u`: every variable read from the environment below is already explicitly
+# guarded (`:-` for the optional ones, `:?` for HOME), so it protected nothing beyond
+# this script's own arrays — and empty arrays are precisely what it makes awkward.
+# Stock macOS ships bash 3.2, where `set -u` turns "${arr[@]}" on an empty array into
+# an "unbound variable" error, forcing every expansion to be written as the unreadable
+# "${arr[@]+"${arr[@]}"}". Keep new env reads explicitly defaulted and that trade is
+# free. HOME drives the mounts and config path, so fail clearly if it is unset (`env -i`).
 : "${HOME:?must be set (export HOME or run from a normal shell)}"
 
 img="${YTDLP_DOCKER_IMAGE:-ghcr.io/rwz/yt-dlp-docker:nightly}"
@@ -53,8 +57,6 @@ tty=(); { [ -t 0 ] && [ -t 1 ]; } && tty=(-t)
 user=()
 [ "${YTDLP_DOCKER_OS:-$(uname -s)}" = "Linux" ] && user=(--user "$(id -u):$(id -g)")
 
-# Note: "${arr[@]+"${arr[@]}"}" expands to nothing when the array is empty — required so
-# an empty array doesn't trip "unbound variable" under `set -u` on bash 3.2 (stock macOS).
 case "$(basename "$0")" in
   *-scoped)
     # Least privilege: mount only the current dir (rw) + yt-dlp config (ro, if it exists).
@@ -64,11 +66,11 @@ case "$(basename "$0")" in
     # the untrusted working dir for config, so --no-config leaves /cfg as the only config.
     cfgmount=(); cfgargs=()
     [ -d "$HOME/.config/yt-dlp" ] && { cfgmount=(-v "$HOME/.config/yt-dlp:/cfg:ro"); cfgargs=(--config-locations /cfg); }
-    args=(run --rm -i "${tty[@]+"${tty[@]}"}" "${user[@]+"${user[@]}"}"
-          -e HOME="$PWD" -v "$PWD:$PWD" -w "$PWD" "${cfgmount[@]+"${cfgmount[@]}"}"
+    args=(run --rm -i "${tty[@]}" "${user[@]}"
+          -e HOME="$PWD" -v "$PWD:$PWD" -w "$PWD" "${cfgmount[@]}"
           --cap-drop=ALL --security-opt=no-new-privileges
-          "${run_args[@]+"${run_args[@]}"}" "$img"
-          --no-config "${cfgargs[@]+"${cfgargs[@]}"}" "$@")
+          "${run_args[@]}" "$img"
+          --no-config "${cfgargs[@]}" "$@")
     ;;
   *)
     # Max fidelity: behave like a local yt-dlp — mount $HOME (+ $PWD if it is outside $HOME).
@@ -78,10 +80,10 @@ case "$(basename "$0")" in
       "$HOME/"*) ;;
       *)         mounts+=(-v "$PWD:$PWD") ;;
     esac
-    args=(run --rm -i "${tty[@]+"${tty[@]}"}" "${user[@]+"${user[@]}"}"
+    args=(run --rm -i "${tty[@]}" "${user[@]}"
           -e HOME="$HOME" "${mounts[@]}" -w "$PWD"
           --cap-drop=ALL --security-opt=no-new-privileges
-          "${run_args[@]+"${run_args[@]}"}" "$img" "$@")
+          "${run_args[@]}" "$img" "$@")
     ;;
 esac
 
