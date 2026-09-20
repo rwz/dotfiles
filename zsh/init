@@ -2,7 +2,6 @@ export EDITOR=nvim
 
 path=(
   ~/.local/bin(N-/)
-  ~/.orbstack/bin(N-/)
   $DOTFILES_PATH/bin(N-/)
   $path
 )
